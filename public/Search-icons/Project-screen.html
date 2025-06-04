@@ -1,0 +1,814 @@
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Project Photos</title>-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">-->
+<!--    <style>-->
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--            font-family: 'Inter', sans-serif;-->
+<!--        }-->
+
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            background: #fff;-->
+<!--            min-height: 100vh;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .container {-->
+<!--            width: 1440px;-->
+<!--            height: 900px;-->
+<!--            display: flex;-->
+<!--            background: #fff;-->
+<!--        }-->
+
+<!--        .sidebar {-->
+<!--            width: 256px;-->
+<!--            height: 900px;-->
+<!--            padding: 16px;-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            background: #fff;-->
+<!--        }-->
+
+<!--        .logo {-->
+<!--            padding: 8px;-->
+<!--            margin-bottom: 24px;-->
+<!--        }-->
+
+<!--        .logo img {-->
+<!--            width: 24px;-->
+<!--            height: 24px;-->
+<!--        }-->
+
+
+<!--        .nav-item {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            padding: 8px 12px;-->
+<!--            gap: 12px;-->
+<!--            border-radius: 6px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .nav-section {-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            gap: 12px;-->
+<!--            margin-top: 16px;-->
+<!--        }-->
+
+<!--        .nav-item.active {-->
+<!--            background: #F3F4F6;-->
+<!--        }-->
+
+<!--        .nav-item img {-->
+<!--            width: 16px;-->
+<!--            height: 16px;-->
+<!--        }-->
+
+<!--        .nav-item span {-->
+<!--            font-size: 14px;-->
+<!--            font-weight: 500;-->
+<!--            line-height: 20px;-->
+<!--            color: #111827;-->
+<!--        }-->
+
+<!--        .section-title {-->
+<!--            padding: 0 12px;-->
+<!--            margin-top: 24px;-->
+<!--            margin-bottom: 8px;-->
+<!--            color: #6B7280;-->
+<!--            font-size: 14px;-->
+<!--            font-weight: 500;-->
+<!--        }-->
+
+<!--        .nav-section {-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            gap: 4px;-->
+<!--        }-->
+
+<!--        .nav-section.footer {-->
+<!--            margin-top: auto;-->
+<!--            margin-bottom: 16px;-->
+<!--        }-->
+
+<!--        .back-home {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 8px;-->
+<!--            padding: 8px 12px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .back-home img {-->
+<!--            width: 16px;-->
+<!--            height: 16px;-->
+<!--        }-->
+
+<!--        .back-home span {-->
+<!--            font-size: 14px;-->
+<!--            font-weight: 500;-->
+<!--            line-height: 20px;-->
+<!--            color: #111827; /* color/text/primary */-->
+<!--        }-->
+
+
+<!--        /* Main Content */-->
+<!--        .main-content {-->
+<!--            width: 1184px;-->
+<!--            height: 900px;-->
+<!--            background: #ffffff;-->
+<!--            padding: 0 4px;-->
+<!--        }-->
+
+<!--        /* Header */-->
+<!--        .header {-->
+<!--            width: 1176px;-->
+<!--            height: 64px;-->
+<!--            position: relative;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: flex-end;-->
+<!--            padding: 0 16px;-->
+<!--        }-->
+
+<!--        .search-container {-->
+<!--            position: relative;-->
+<!--            width: 400px;-->
+<!--            height: 40px;-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--        }-->
+
+<!--        .search-icon {-->
+<!--            position: absolute;-->
+<!--            left: 12px;-->
+<!--            width: 20px;-->
+<!--            height: 20px;-->
+<!--            pointer-events: none;-->
+<!--        }-->
+
+<!--        .search-box {-->
+<!--            width: 100%;-->
+<!--            height: 40px;-->
+<!--            padding: 8px 8px 8px 40px;-->
+<!--            border: 1px solid #E5E7EB;-->
+<!--            border-radius: 8px;-->
+<!--            font-family: 'Inter', sans-serif;-->
+<!--            font-size: 14px;-->
+<!--            color: #111827;-->
+<!--        }-->
+
+
+<!--        .header-tools {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 16px;-->
+<!--        }-->
+
+<!--        /* Photos Banner */-->
+<!--        .photos-banner {-->
+<!--            width: 1176px;-->
+<!--            height: 104px;-->
+<!--            padding: 16px;-->
+<!--        }-->
+
+<!--        .photos-header {-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: flex-start;-->
+<!--        }-->
+
+<!--        .photos-title {-->
+<!--            font-size: 30px;-->
+<!--            font-weight: 500;-->
+<!--            color: #111827;-->
+<!--        }-->
+
+<!--        .photos-count {-->
+<!--            font-size: 14px;-->
+<!--            color: #6B7280;-->
+<!--            margin-top: 4px;-->
+<!--        }-->
+
+<!--        .photos-actions {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            gap: 12px;-->
+<!--        }-->
+
+<!--        /* Photos Gallery */-->
+<!--        .photos-gallery {-->
+<!--            width: 1176px;-->
+<!--            height: 496px;-->
+<!--            padding: 16px;-->
+<!--        }-->
+
+<!--        .gallery-header {-->
+<!--            width: 1144px;-->
+<!--            height: 32px;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            align-items: center;-->
+<!--            margin-bottom: 24px;-->
+<!--        }-->
+
+<!--        .gallery-tabs {-->
+<!--            display: flex;-->
+<!--            gap: 24px;-->
+<!--        }-->
+
+
+<!--        .gallery-controls {-->
+<!--            display: flex;-->
+<!--            gap: 12px;-->
+<!--        }-->
+
+<!--        .photos-grid {-->
+<!--            display: grid;-->
+<!--            grid-template-columns: repeat(5, 216px);-->
+<!--            gap: 16px;-->
+<!--            width: 1144px;-->
+<!--        }-->
+
+<!--        .photo-item {-->
+<!--            width: 216px;-->
+<!--            height: 216px;-->
+<!--            border-radius: 16px;-->
+<!--            overflow: hidden;-->
+<!--        }-->
+
+<!--        .photo-item img {-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            object-fit: cover;-->
+<!--        }-->
+
+
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        &lt;!&ndash; Sidebar &ndash;&gt;-->
+<!--        <div class="sidebar">-->
+<!--            <div class="logo">-->
+<!--                <img src="Project-icons/Logo.svg" alt="Logo">-->
+<!--            </div>-->
+
+<!--            <div class="nav-section">-->
+<!--               <div class="back-home">-->
+<!--                <img src="Project-icons/arrow left.svg" alt="Back">-->
+<!--                <span>Home</span>-->
+<!--               </div>-->
+
+
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/label.svg" alt="Dexter">-->
+<!--                    <span>Dexter</span>-->
+<!--                </div>-->
+
+<!--                <div class="nav-item active">-->
+<!--                    <img src="Project-icons/photos.svg" alt="Photos">-->
+<!--                    <span>Photos</span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="section-title">Collections</div>-->
+<!--            <div class="nav-section">-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/people.svg" alt="People">-->
+<!--                    <span>People</span>-->
+<!--                </div>-->
+<!--                <div class="nav-item" onclick="window.location.href='Project-category.html'">-->
+<!--                     <img src="Project-icons/categories.svg" alt="Categories">-->
+<!--                     <span>Categories</span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="section-title">Albums</div>-->
+<!--            <div class="nav-section">-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/dog park.svg" alt="Dog park">-->
+<!--                    <span>Dog park</span>-->
+<!--                </div>-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/label.svg" alt="Label">-->
+<!--                    <span>Label</span>-->
+<!--                </div>-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/label.svg" alt="Label">-->
+<!--                    <span>Label</span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="nav-section footer">-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/settings.svg" alt="Settings">-->
+<!--                    <span>Settings</span>-->
+<!--                </div>-->
+<!--                <div class="nav-item">-->
+<!--                    <img src="Project-icons/trash.svg" alt="Trash">-->
+<!--                    <span>Trash</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--        &lt;!&ndash; Main Content &ndash;&gt;-->
+<!--        <div class="main-content">-->
+<!--            &lt;!&ndash; Header &ndash;&gt;-->
+<!--            <div class="header">-->
+<!--                <div class="header-tools">-->
+<!--                 <div class="search-container">-->
+<!--                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                        <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#6B7280" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>-->
+<!--                    </svg>-->
+<!--                    <input type="search" class="search-box" placeholder="Search photos, categories and more..">-->
+<!--                </div>-->
+<!--                    <img src="Project-icons/Icon.svg" alt="Print" class="print-icon">-->
+<!--                    <img src="Project-icons/profile.svg" alt="Profile" class="profile-pic">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Photos Banner &ndash;&gt;-->
+<!--            <div class="photos-banner">-->
+<!--                <div class="photos-header">-->
+<!--                    <div>-->
+<!--                        <h1 class="photos-title">Photos</h1>-->
+<!--                        <div class="photos-count">353 photos</div>-->
+<!--                    </div>-->
+<!--                    <div class="photos-actions">-->
+<!--                        <img src="Project-icons/more.svg" alt="More">-->
+<!--                        <div>-->
+<!--                            <img src="Project-icons/data%20flow.svg" alt="Add">-->
+<!--                        </div>-->
+<!--                         <div>-->
+<!--                            <img src="Project-icons/add%20photos.svg" alt="Add">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Photos Gallery &ndash;&gt;-->
+<!--            <div class="photos-gallery">-->
+<!--                <div class="gallery-header">-->
+<!--                    <div class="gallery-tabs">-->
+<!--                        <div> <img src="Project-icons/all.svg" alt="Sort"></div>-->
+<!--                        <div> <img src="Project-icons/flagged.svg" alt="Sort"></div>-->
+<!--                    </div>-->
+<!--                    <div class="gallery-controls">-->
+<!--                        <img src="Project-icons/sort.svg" alt="Sort">-->
+<!--                        <img src="Project-icons/sort by date.svg" alt="Sort by date">-->
+<!--                        <img src="Project-icons/grid view.svg" alt="Grid view">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="photos-grid">-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo1.svg" alt="Dog photo">-->
+<!--                    </div>-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo2.svg" alt="Dog photo">-->
+<!--                    </div>-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo3.svg" alt="Dog photo">-->
+<!--                    </div>-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo4.svg" alt="Landscape">-->
+<!--                    </div>-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo5.svg" alt="Child photo">-->
+<!--                    </div>-->
+<!--                    <div class="photo-item">-->
+<!--                        <img src="Project-icons/photo5.svg" alt="Portrait">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Photos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 1440px;
+            height: 900px;
+            display: flex;
+            background: #fff;
+        }
+
+        .sidebar {
+            width: 256px;
+            height: 900px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        .logo {
+            padding: 8px;
+            margin-bottom: 24px;
+        }
+
+        .logo img {
+            width: 24px;
+            height: 24px;
+        }
+
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            gap: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .nav-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .nav-item.active {
+            background: #F3F4F6;
+        }
+
+        .nav-item img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .nav-item span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #111827;
+        }
+
+        .section-title {
+            padding: 0 12px;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            color: #6B7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .nav-section.footer {
+            margin-top: auto;
+            margin-bottom: 16px;
+        }
+
+        .back-home {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .back-home img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .back-home span {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #111827; /* color/text/primary */
+        }
+
+
+        /* Main Content */
+        .main-content {
+            width: 1184px;
+            height: 900px;
+            background: #ffffff;
+            padding: 0 4px;
+        }
+
+        /* Header */
+        .header {
+            width: 1176px;
+            height: 64px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 16px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 400px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+        }
+
+        .search-box {
+            width: 100%;
+            height: 40px;
+            padding: 8px 8px 8px 40px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: #111827;
+        }
+
+
+        .header-tools {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Photos Banner */
+        .photos-banner {
+            width: 1176px;
+            height: 104px;
+            padding: 16px;
+        }
+
+        .photos-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .photos-title {
+            font-size: 30px;
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .photos-count {
+            font-size: 14px;
+            color: #6B7280;
+            margin-top: 4px;
+        }
+
+        .photos-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Photos Gallery */
+        .photos-gallery {
+            width: 1176px;
+            height: 496px;
+            padding: 16px;
+        }
+
+        .gallery-header {
+            width: 1144px;
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-tabs {
+            display: flex;
+            gap: 24px;
+        }
+
+
+        .gallery-controls {
+            display: flex;
+            gap: 12px;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 216px);
+            gap: 16px;
+            width: 1144px;
+        }
+
+        .photo-item {
+            width: 216px;
+            height: 216px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="Project-icons/Logo.svg" alt="Logo">
+            </div>
+
+            <div class="nav-section">
+               <div class="back-home">
+                <img src="Project-icons/arrow left.svg" alt="Back" onclick="window.location.href='Projects-home.html'">
+                <span>Home</span>
+               </div>
+
+
+                <div class="nav-item" onclick="window.location.href='Selected-project-home.html'">
+                    <img src="Project-icons/label.svg" alt="Dexter">
+                    <span>Dexter</span>
+                </div>
+
+                <div class="nav-item active">
+                    <img src="Project-icons/photos.svg" alt="Photos">
+                    <span>Photos</span>
+                </div>
+            </div>
+
+            <div class="section-title">Collections</div>
+            <div class="nav-section">
+                <div class="nav-item" onclick="window.location.href='Project-people.html'">
+                    <img src="Project-icons/people.svg" alt="People" >
+                    <span>People</span>
+                </div>
+                <div class="nav-item" onclick="window.location.href='Project-category.html'">
+                     <img src="Project-icons/categories.svg" alt="Categories">
+                     <span>Categories</span>
+                </div>
+            </div>
+
+            <div class="section-title" onclick="window.location.href='Project-all-albums.html'">Albums</div>
+            <div class="nav-section">
+                <div class="nav-item" onclick="window.location.href='Selected-albums.html'">
+                    <img src="Project-icons/dog park.svg" alt="Dog park">
+                    <span>Dog park</span>
+                </div>
+                <div class="nav-item">
+                    <img src="Project-icons/label.svg" alt="Label">
+                    <span>Label</span>
+                </div>
+                <div class="nav-item">
+                    <img src="Project-icons/label.svg" alt="Label">
+                    <span>Label</span>
+                </div>
+            </div>
+
+            <div class="nav-section footer">
+                <div class="nav-item">
+                    <img src="Project-icons/settings.svg" alt="Settings">
+                    <span>Settings</span>
+                </div>
+                <div class="nav-item">
+                    <img src="Project-icons/trash.svg" alt="Trash">
+                    <span>Trash</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-tools">
+                 <div class="search-container">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="#6B7280" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="search" class="search-box" placeholder="Search photos, categories and more..">
+                </div>
+                    <img src="Project-icons/Icon.svg" alt="Print" class="print-icon">
+                    <img src="Project-icons/profile.svg" alt="Profile" class="profile-pic">
+                </div>
+            </div>
+
+            <!-- Photos Banner -->
+            <div class="photos-banner">
+                <div class="photos-header">
+                    <div>
+                        <h1 class="photos-title">Photos</h1>
+                        <div class="photos-count">353 photos</div>
+                    </div>
+                    <div class="photos-actions">
+                        <img src="Project-icons/more.svg" alt="More">
+                        <div>
+                            <img src="Project-icons/data%20flow.svg" alt="Add">
+                        </div>
+                         <div>
+                            <img src="Project-icons/add%20photos.svg" alt="Add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos Gallery -->
+            <div class="photos-gallery">
+                <div class="gallery-header">
+                    <div class="gallery-tabs">
+                        <div> <img src="Project-icons/all.svg" alt="Sort"></div>
+                        <div> <img src="Project-icons/flagged.svg" alt="Sort"></div>
+                    </div>
+                    <div class="gallery-controls">
+                        <img src="Project-icons/sort.svg" alt="Sort">
+                        <img src="Project-icons/sort by date.svg" alt="Sort by date">
+                        <img src="Project-icons/grid view.svg" alt="Grid view">
+                    </div>
+                </div>
+                <div class="photos-grid">
+                    <div class="photo-item">
+                        <img src="Project-icons/photo1.svg" alt="Dog photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="Project-icons/photo2.svg" alt="Dog photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="Project-icons/photo3.svg" alt="Dog photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="Project-icons/photo4.svg" alt="Landscape">
+                    </div>
+                    <div class="photo-item">
+                        <img src="Project-icons/photo5.svg" alt="Child photo">
+                    </div>
+                    <div class="photo-item">
+                        <img src="Project-icons/photo5.svg" alt="Portrait">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
