@@ -23,16 +23,16 @@ export default function Sidebar({ projectId, projectName }: SidebarProps) {
       <SidebarSection>
         <Link 
           href="/" 
-          className=" flex items-center gap-2 py-2 px-3  w-[224px] h-[40px]  text-gray-900  text-sm no-underline"
+          className=" flex items-center gap-5 py-2 px-3  w-[224px] h-[40px]  text-gray-900  text-sm no-underline"
         >
           
           <Image 
             src="/Project-icons/arrow left.svg" 
             alt="Back" 
-            width={16} 
-            height={16} 
+            width={8} 
+            height={13} 
           />
-          Home
+             Home
         </Link>
         
         <SidebarNavItem 

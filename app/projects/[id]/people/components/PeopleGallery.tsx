@@ -16,10 +16,10 @@ export default function PeopleGallery() {
   ];
   
   return (
-    <div className=" w-[1176px] h-[132px] px-4 py-2 ">
+    <div className="w-[1176px] h-[132px] px-4 py-2">
       <div className="flex gap-4">
         {people.map((person, index) => (
-          <Link href={`/projectpage/${projectId}/people/${index + 1}`} key={index}>
+          <Link href={`/projects/${projectId}/people/${index + 1}`} key={index}>
             <div className="w-[116px] h-[116px] p-2 bg-gray-100 rounded-2xl hover:bg-gray-200 transition-colors">
               <Image 
                 src={person} 
@@ -35,3 +35,4 @@ export default function PeopleGallery() {
     </div>
   );
 }
+ 
